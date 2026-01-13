@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Screw & Sort: Metal ASMR - Unscrew colored screws and match them!">
+    <title>Screw & Sort: Metal ASMR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Start Screen -->
+        <div id="start-screen">
+            <!-- Floating Screws Background -->
+            <div class="floating-screws">
+                <div class="float-screw">🔩</div>
+                <div class="float-screw">🔩</div>
+                <div class="float-screw">🔩</div>
+                <div class="float-screw">🔩</div>
+                <div class="float-screw">🔩</div>
+            </div>
+
+            <div class="start-content">
+                <h1 class="game-title metallic-3d">SCREW & SORT</h1>
+                <p class="game-subtitle">Metal ASMR</p>
+
+                <!-- How to Play Panel -->
+                <div class="instruction-panel">
+                    <h3 class="instruction-title">HOW TO PLAY</h3>
+                    <div class="instruction-item">
+                        <span class="instruction-icon">🔧</span>
+                        <span class="instruction-text"><strong>Tap to Unscrew:</strong> Remove screws to free the
+                            plates.</span>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="instruction-icon">🎨</span>
+                        <span class="instruction-text"><strong>Match 3:</strong> Sort by color into the top slots to
+                            clear them.</span>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="instruction-icon">⬇️</span>
+                        <span class="instruction-text"><strong>Drop it:</strong> Empty all screws to make the metal
+                            plates fall!</span>
+                    </div>
+                </div>
+
+                <button id="play-btn" class="neon-play-button">
+                    <span class="btn-text">PLAY</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Professional HUD -->
+        <div id="ui-overlay">
+
+            <!-- Unified Header Row -->
+            <div id="header-row">
+                <!-- Left: Level -->
+                <div id="level-hud">
+                    <div class="neon-sign">
+                        <span class="level-label">LEVEL</span>
+                        <span id="level-number">1</span>
+                    </div>
+                </div>
+
+                <!-- Center: Timer -->
+                <div id="timer-panel">
+                    <div class="panel-label">TIMER</div>
+                    <div id="timer-display">60</div>
+                    <div id="timer-container-header">
+                        <div id="timer-bar"></div>
+                    </div>
+                </div>
+
+                <!-- Right: Status -->
+                <div id="status-panel">
+                    <div class="panel-header">STATUS</div>
+                    <div class="status-row">
+                        <div id="health-container">
+                            <span class="heart" id="heart-1">❤</span>
+                            <span class="heart" id="heart-2">❤</span>
+                            <span class="heart" id="heart-3">❤</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combo Text -->
+            <div id="combo-text" class="hidden">EXCELLENT!</div>
+
+            <!-- Level Complete Popup -->
+            <div id="level-complete" class="popup hidden">
+                <div class="popup-content">
+                    <h2 class="popup-title">LEVEL COMPLETE!</h2>
+                    <div class="stars">★ ★ ★</div>
+                    <button id="next-level-btn" class="action-button">NEXT LEVEL</button>
+                </div>
+            </div>
+
+            <!-- Game Over Popup -->
+            <div id="game-over" class="popup hidden">
+                <div class="popup-content">
+                    <h2 class="popup-title game-over-title">GAME OVER</h2>
+                    <p class="final-level">Level Reached: <span id="final-level">1</span></p>
+                    <button id="extra-slots-btn" class="reward-button">🎁 GET 2 EXTRA SLOTS</button>
+                    <button id="restart-btn" class="action-button">RESTART</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GameDistribution SDK -->
+    <script src="https://html5.api.gamedistribution.com/main.min.js"></script>
+
+    <!-- Game Logic -->
+    <script src="game.js"></script>
+</body>
+
+</html>
